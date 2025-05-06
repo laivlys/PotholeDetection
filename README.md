@@ -1,11 +1,15 @@
 # Pothole Detection
+This project proposes a pothole detection system integrated with a road type classification model, designed to assist authorities in identifying roads requiring maintenance and prioritizing those with higher traffic volume, higher safety concern, and greater susceptibility to damage.
+
+## Methodology 
+
 This project is trained on 100 images of roads that was downloaded from Google Earth Engine. 
 
-Using the LabelMe application, the potholes and uneven roads in the images were manually labelled and used to train the model. A MaskRCNN pretrained model was used as a basis and was fine-tuned using the hand labelled dataset of potholes. 
+Using the LabelMe application, the potholes and uneven roads in the images were manually labelled and used to train the model. A MaskRCNN pretrained model was used as a base model due to the high accuracy rate and was fine-tuned using the hand labelled dataset of potholes. 
 
-The type of road was also manually labelled in the Python notebook which was then used to fine tune the ResNet18 model that was used as a foundation for identifying road type. The road type was categorized into 3 different categories of road: local roads, collector roads, and arterial roads. 
+Roads were categorized into three main categories: local roads, collector roads, and arterial roads. Local roads typically serve residential areas, accommodate lower traffic volumes, and support slower vehicle speeds. Collector roads function as intermediaries, linking local roads to arterial roads, and generally carry moderate traffic volumes. Arterial roads, including highways and major thoroughfares, are designed to handle high traffic volumes and support faster travel speeds.
 
-Local roads were defined as the roads that were mainly for residential areas; collector roads were the connecting roads of local roads to arterial roads; and arterial roads are identified as highways and freeways. 
+The ResNet-18 architecture was employed as the foundational model and was fine tuned using the manual classification of roads in Python. 
 
-The aim is to be able to identify potholes in the roads and the type of roads that have these potholes to determine which roads have been undermaintained. State and municipal governments that are working on a tight budget can also better identify the exact location of potholes, the severeity, and the urgency of maintenance. 
+
 
